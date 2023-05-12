@@ -1,0 +1,27 @@
+{
+  "name": "shopify-theme-udemy",
+  "version": "1.0.0",
+  "description": "[![Generic badge](https://img.shields.io/badge/course%20available%3F-yes-green.svg)](https://shields.io/)",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "tailwindcss -i ./css/tailwind.css -o ./assets/application.css",
+    "tailwind:watch": "npm run tailwind -- --watch",
+    "dev": "shopify theme dev -s https://anatta-dev.myshopify.com/ -t 128351567917"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polidario/Elizabeth_Clean.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polidario/Elizabeth_Clean/issues"
+  },
+  "homepage": "https://github.com/polidario/Elizabeth_Clean#readme",
+  "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.0.6",
+    "prettier": "^2.8.8",
+    "tailwindcss": "^3.3.2"
+  }
+}
