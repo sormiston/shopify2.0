@@ -1,10 +1,10 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "",
+    "theme_name": "udemy-elizabeth",
     "theme_version": "1.0.0",
-    "theme_author": "",
-    "theme_documentation_url": "",
-    "theme_support_url": ""
+    "theme_author": "Sean Ormiston",
+    "theme_documentation_url": "https://github.com/sormiston/shopify2.0",
+    "theme_support_url": "https://github.com/sormiston/shopify2.0"
   }
 ]

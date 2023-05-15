@@ -6,7 +6,7 @@
   "scripts": {
     "tailwind": "tailwindcss -i ./css/tailwind.css -o ./assets/application.css",
     "tailwind:watch": "npm run tailwind -- --watch",
-    "dev": "shopify theme dev -s https://anatta-dev.myshopify.com/ -t 128351567917"
+    "dev": "shopify theme dev -s https://anatta-dev.myshopify.com/ -t 128352157741"
   },
   "repository": {
     "type": "git",
