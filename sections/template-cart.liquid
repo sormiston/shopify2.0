@@ -49,12 +49,13 @@
                     >remove</a
                   >
                 </td>
-                <!-- quantity updates --->
+                <!-- quantity updates - -->
                 <td class="py-4 px-2">
                   <input type="number" name="updates[]" value="{{ item.quantity }}" min="1" class="w-20 border p-2">
                 </td>
-                <td>
-                {{ item.line_price | money }}
+                <!-- line price - -->
+                <td class="py-4 px-2">
+                  {{ item.line_price | money }}
                 </td>
               </tr>
             {% endfor %}
