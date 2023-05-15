@@ -5,10 +5,31 @@
       <div class="flex items-end justify-between my-5">
         <h1 class="text-3xl my-4">Your cart</h1>
         <a
-          href="{{routes.all_products_collection_url}}"
+          href="{{ routes.all_products_collection_url }}"
           class="text-blue-600 hover:text-blue-800 font-medium underline"
           >Continue shopping</a
         >
+      </div>
+      <div class="max-w-6xl flex flex-col my-10 mx-auto">
+        <form action="{{ routes.cart_url}}" method="POST" novalidate>
+          <table class="table-auto divide-y divide-gray-200 my-4 w-full">
+            <thead>
+              <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">
+                Product
+              </th>
+            </thead>
+            <thead>
+              <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">
+                Quantity
+              </th>
+            </thead>
+            <thead>
+              <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">
+                Total Price
+              </th>
+            </thead>
+          </table>
+        </form>
       </div>
     </div>
   </div>
