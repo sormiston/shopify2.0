@@ -30,8 +30,8 @@
                   <td>
                     <a href="{{ item.url }}">
                       {% if item.image %}
-                        {% else %}
-                            {{ ''}}
+                      {% else %}
+                        {{ '' | placeholder_svg_tag: 'w-20 h-20' }}
                       {% endif %}
                     </a>
                   </td>
