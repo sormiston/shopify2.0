@@ -61,6 +61,121 @@
   {% endfor %}
 </article>
 
+{% if blog.comments_enabled? %}
+  <div id="comments" class="my-8 mx-auto max-w-fit">
+    {% if article.comments_count > 0 %}
+      <div class="flex-1 items-center justify-center mx-auto max-w-4xl px-4">
+        <h1 class="text-lg mb-4 font-medium">See what people are saying</h1>
+        {% paginate article.comments by 3 %}
+          {% for comment in article.comments %}
+            <div
+              class="flex-1 border my-4 px-4 py-2 sm:px-6 sm:py-4 leading-relaxed"
+            >
+              <span class="comment-author">{{ comment.author }}</span>
+              <span class="text-xs text-gray-400">
+                {{ comment.created_at | date: format: 'default' }}
+              </span>
+              <p class="text-sm">{{ comment.content }}</p>
+            </div>
+          {% endfor %}
+          {% if paginate.pages > 1 %}
+            {{ paginate | default_pagination }}
+          {% endif %}
+        {% endpaginate %}
+      </div>
+    {% else %}
+      There are no comments in this article.
+    {% endif %}
+  </div>
+  <div id="comment_form" class="mb-8">
+    {% form 'new_comment', article %}
+      <div class="flex-1 mx-auto items-center justify-center max-w-4xl px-4">
+        <div class="px-1 md:flex mb-3">
+          <div class="px-3 md:w-1/2">
+            <label
+              for="comment_author"
+              class="text-gray-700 font-medium uppercase text-xs mb-2"
+              >Name</label
+            >
+            <input
+              type="text"
+              name="comment[author]"
+              id="comment_author"
+              class="w-full text-gray-700 border py-3 px-4 mb-3 focus:outline-none"
+              placeholder="Jane Doe"
+              required
+            >
+          </div>
+          <div class="px-3 md:w-1/2">
+            <label
+              for="comment_email"
+              class="text-gray-700 font-medium uppercase text-xs mb-2"
+              >Email</label
+            >
+            <input
+              type="text"
+              name="comment[email]"
+              id="comment_email"
+              class="w-full text-gray-700 border py-3 px-4 mb-3 focus:outline-none"
+              placeholder="jane@doe.com"
+              required
+            >
+          </div>
+        </div>
+        <div class="md:w-full px-3">
+          <label
+            for="comment_content"
+            class="text-gray-700 font-medium uppercase text-xs mb-2"
+            >Comment</label
+          >
+          <textarea
+            name="comment[body]"
+            id="comment_content"
+            class="w-full text-gray-700 resize-none h-20 py-2 px-3 focus:outline-none border"
+            required
+          ></textarea>
+        </div>
+        <div class="px-1 md:flex mb-3">
+          <div class="md:w-full px-3">
+            <input
+              type="submit"
+              class="w-full cursor-pointer px-4 py-2 border text-base font-medium text-white bg-gray-900 hover:bg-gray-500"
+              value="Post comment"
+            >
+          </div>
+        </div>
+      </div>
+    {% endform %}
+  </div>
+{% endif %}
+
+<script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "headline": {{ article.title | json }},
+      "articleBody": {{ article.content | strip_html | json }},
+      {% if article.excerpt != blank %}
+          "description": {{ article.excerpt | strip_html | json }},
+      {% endif %}
+      {% if article.image %}
+          "image": [
+              {{ article.image | img_url: "medium" | prepend: 'https:' | json }}
+          ],
+      {% endif %}
+      "datePublished": {{ article.published_at | date: format: "default" | json }},
+      "dateCreated": {{ article.created_at | date: format: "default" | json }},
+      "author": {
+          "@type": "Person",
+          "name": {{ article.author | json }}
+      },
+      "publisher": {
+          "@type": "Organization",
+          "name": {{ shop.name | json }}
+      }
+  }
+</script>
+
 {% schema %}
 {
   "name": "Template Article",
