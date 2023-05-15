@@ -28,7 +28,7 @@
                     {% if item.image %}
                       <img
                         class="w-20 h-20 object-cover border"
-                        src="{{ item.image | image_url: 'small' }}"
+                        src="{{ item.image | img_url: 'small' }}"
                         alt="{{ item.title | escape }}"
                       >
                     {% else %}
