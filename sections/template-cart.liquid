@@ -27,7 +27,9 @@
             <tbody>
               {% for item in cart.items %}
                 <tr class="table-row">
-                  <td><a href="{{ item.url }}"></a></td>
+                  <td><a href="{{ item.url }}">{% if condition %}
+                    
+                  {% endif %}</a></td>
                   <td></td>
                   <td></td>
                   <td></td>
