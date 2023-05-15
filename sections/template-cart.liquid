@@ -52,11 +52,11 @@
                 <!-- quantity updates - -->
                 <td class="py-4 px-2">
                   <input type="number" name="updates[]" value="{{ item.quantity }}" min="1" class="w-20 border p-2">
-                </td> 
+                </td>
                 <!-- line price - -->
-               <td class="py-4 px-2">
+                <td class="py-4 px-2">
                   {{ item.line_price | money }}
-                </td> 
+                </td>
               </tr>
             {% endfor %}
           </tbody>
@@ -65,7 +65,8 @@
         <div class="flex flex-col md:flex-row itmes-center justify-between">
           <div class="w-full my-4"></div>
           <div class="w-full my-4md:w-80">
-          <h3 class="text-xl"></h3></div>
+            <h3 class="text-xl">Subtotal: {{ cart.total_price | money }}</h3>
+          </div>
         </div>
       </form>
     </div>
