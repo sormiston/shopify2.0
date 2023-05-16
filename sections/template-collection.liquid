@@ -15,3 +15,16 @@
     {% render 'pagination', pagination: paginate %}
   {% endpaginate %}
 </div>
+
+{% schema %}
+    {
+        "name": "Collection",
+        "settings": [
+            {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+            }
+        ]
+    }
+{% endschema %}
