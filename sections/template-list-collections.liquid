@@ -7,7 +7,7 @@
     {% if collection.featured_image %}
 
         {% else %}
-            <img src="{{collection.products}}" alt="">
+            <img src="{{collection.products | first }}" alt="">
         
     {% endif %}
     </div>
