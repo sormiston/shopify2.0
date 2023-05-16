@@ -6,10 +6,12 @@
         {% for product in collection.products %}
           <div class="w-full py-6 px-3">
             <div class="border bg-white shadow-lg rounded-lg overflow-hidden">
-              <a href="{{product.url}}"></a>
-              {% if product.featured_image %}
-                <img src="{{product.featured_image | image_url: width: 400 }}" alt="{{product.featured_image.alt}}">
-              {% endif %}
+              <a href="{{product.url}}">
+                {% if product.featured_image %}
+                  <img src="{{product.featured_image | image_url: width: 400 }}" alt="{{product.featured_image.alt}}">
+                {% endif -%}
+              </a>
+
               <span>{{ product.vendor }}</span>
               <a href="{{product.url}}">{{ product.title }}</a>
               <p>{{ product.price | money }}</p>
