@@ -29,16 +29,6 @@
         {% endfor %}
       </div>
     </div>
-    {% for product in collection.products %}
-      {% if product.featured_image %}
-        <img src="{{product.featured_image | image_url: width: 400 }}" alt="{{product.featured_image.alt}}">
-      {% endif %}
-      <span>{{ product.vendor }}</span>
-      <a href="{{product.url}}">{{ product.title }}</a>
-      <p>{{ product.price | money }}</p>
-    {% else %}
-      <p>There are no products inside of this collection.</p>
-    {% endfor %}
 
     {% render 'paginate', pagination: paginate %}
   {% endpaginate %}
