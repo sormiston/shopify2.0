@@ -1,6 +1,7 @@
 {% paginate collection.products by 6 %}
   {% for product in collection.products %}
-    {% if condition %}
+    {% if product.featured_image %}
+        {{}}
         
     {% endif %}
     <a href="{{product.url}}">{{product.title}}</a>
