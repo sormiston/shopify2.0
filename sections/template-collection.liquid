@@ -1,3 +1,4 @@
+{% assign numProductsPerPage = block.settings.numnber_of_products_per_page %}
 <div class="px-4 py-8">
   {% paginate collection.products by 6 %}
     <h1 class="text-3xl text-center">{{ collection.title }}</h1>
@@ -17,14 +18,15 @@
 </div>
 
 {% schema %}
+{
+  "name": "Collection",
+  "settings": [
     {
-        "name": "Collection",
-        "settings": [
-            {
-            "type": "number",
-            "id": "number_of_products",
-            "label": "Collection"
-            }
-        ]
+      "type": "number",
+      "id": "number_of_products_per_page",
+      "default": 6,
+      "label": "Number of products to display per page"
     }
+  ]
+}
 {% endschema %}
