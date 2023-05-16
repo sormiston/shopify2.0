@@ -1,5 +1,6 @@
 {% comment %} {% assign numProductsPerPage = block.settings.numnber_of_products_per_page %} {% endcomment %}
 <div class="px-4 py-8">
+    {{collection.products | json}}
   {% paginate collection.products by 6 %}
     <h1 class="text-3xl text-center">{{ collection.title }}</h1>
     <div class="max-w-6xl mx-auto">
