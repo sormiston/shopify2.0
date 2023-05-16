@@ -12,9 +12,8 @@ HELLO WORLD
             {% endif %}
             <img
               src="{{ collectionImage | image_url: width: 700 }}"
-              alt="{{ collection.title }}"
+              alt="{{ collection.title | escape }}"
               class="w-full h-full object-cover"
-
             >
           </div>
         </a>
