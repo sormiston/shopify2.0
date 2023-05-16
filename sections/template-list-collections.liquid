@@ -10,7 +10,11 @@ HELLO WORLD
             {% else %}
               {% assign collectionImage = collection.products.first.featured_image %}
             {% endif %}
-            <img src="{{ collectionImage | image_url: width: 700 }}" alt="{{ collection.title }}" class="w-full h-full object-cover">
+            <img
+              src="{{ collectionImage | image_url: width: 700 }}"
+              alt="{{ collection.title }}"
+              class="w-full h-full object-cover"
+            >
           </div>
         </a>
       </div>
