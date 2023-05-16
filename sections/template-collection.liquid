@@ -1,11 +1,10 @@
 {% paginate collection.products by 6 %}
   {% for product in collection.products %}
     {% if product.featured_image %}
-        <img src="{{product.featured_image | image_url: 'medium'}}" alt="{{product.featured_image.alt}}">
-        
+      <img src="{{product.featured_image | image_url: 'medium'}}" alt="{{product.featured_image.alt}}">
     {% endif %}
-    <span></span>
-    <a href="{{product.url}}">{{product.title}}</a>
+    <span>{{ product.vendor }}</span>
+    <a href="{{product.url}}">{{ product.title }}</a>
   {% else %}
     <p>There are no products inside of this collection.</p>
   {% endfor %}
