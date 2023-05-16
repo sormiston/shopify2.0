@@ -6,9 +6,9 @@ HELLO WORLD
         <a href="{{collection.url}}">
           <div class="h-80 overflow-hidden">
             {% if collection.featured_image %}
-                {% assign collectionImage = value %}
-              <img src="{{collection.featured_image | image_url: width: 800 }}">
+                {% assign collectionImage = collection.featured_image %}
             {% else %}
+            {% assign c = value %}
               <img src="{{ collection.products.first.featured_image | image_url: width: 800 }}" alt="">
             {% endif %}
           </div>
