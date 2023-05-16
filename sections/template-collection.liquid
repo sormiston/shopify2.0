@@ -4,7 +4,9 @@
     <div class="max-w-6xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
         {% for product in collection.products %}
-            <div class="w-full py-6 px-3"></div>
+            <div class="w-full py-6 px-3">
+            .border.bg-white.shadow-lg.
+            </div>
           {% if product.featured_image %}
             <img src="{{product.featured_image | image_url: width: 400 }}" alt="{{product.featured_image.alt}}">
           {% endif %}
