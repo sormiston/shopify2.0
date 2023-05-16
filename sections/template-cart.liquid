@@ -75,7 +75,6 @@
               ></textarea>
             </div>
           </div>
-
           <div class="w-full my-4 md:w-80">
             {% for block in section.blocks %}
               {% case block.type %}
@@ -90,7 +89,7 @@
                       Update
                     </button>
                   </div>
-                {% else %}
+                {% when '' %}
   
               {% endcase %}
             {% endfor %}
