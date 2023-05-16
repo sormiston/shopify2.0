@@ -76,7 +76,12 @@
             </div>
           </div>
           {% for block in section.blocks %}
-            
+            {% case block.type %}
+              {% when condition %}
+                
+              {% else %}
+                
+            {% endcase %}
             
           {% endfor %}
           <div class="w-full my-4 md:w-80">
