@@ -7,8 +7,23 @@
           "type": "subtotal",
           "settings": {
           }
+        },
+        "update_button": {
+          "type": "update_button",
+          "settings": {
+          }
+        },
+        "checkout_button": {
+          "type": "checkout_button",
+          "settings": {
+          }
         }
       },
+      "block_order": [
+        "subtotal",
+        "update_button",
+        "checkout_button"
+      ],
       "settings": {
       }
     }
