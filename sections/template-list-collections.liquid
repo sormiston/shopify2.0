@@ -1,32 +1,18 @@
-<div class="px-4 py-8">
-    {% paginate collection.products by section.settings.number_of_products_per_page %}
-        <h1 class="text-3xl text-center">{{ collection.title }}</h1>
-
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for product in collection.products %}
-                    {% render 'product-card', product_product: product %}
-                {% else %}
-                    <p>There are no products inside of this collection</p>
-                {% endfor %}
-            </div>
+{% for collection in collections %}
+    {% unless collection.handle == 'frontpage' %}
+      {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+      <a href="{{ collection.url }}">More {{ collection_title }} &rsaquo;</a>
+      {% for product in collection.products limit:5 %}
+        {% assign grid_item_width = 'large--one-fifth medium--one-half' %}
+        <div>
+          <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+          {{ product.price | money }}
+          {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+          <a href="{{ product.url | within: collection }}">
+            <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}">
+          </a>
         </div>
-        
-
-        {% render 'pagination', pagination: paginate %}
-    {% endpaginate %}
-</div>
-
-{% schema %}
-{
-    "name": "Template Collection",
-    "settings": [
-        {
-            "type": "number",
-            "id": "number_of_products_per_page",
-            "default": 6,
-            "label": "Number of products per page"
-        }
-    ]
-}
-{% endschema %}
+      {% endfor %}
+    {% endunless %}
+  {% endfor %}
+  
