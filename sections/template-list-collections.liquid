@@ -5,7 +5,7 @@
         <a href="{{collection.url}}">
           <div class="h-80 overflow-hidden">
             {% if collection.featured_image %}
-                <img src="{}">
+                <img src="{{collection }}">
             {% else %}
               <img src="{{ collection.products.first.featured_image | image_url: width: 800 }}" alt="">
             {% endif %}
