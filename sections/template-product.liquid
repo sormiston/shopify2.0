@@ -94,7 +94,7 @@
                   <select
                     name="options[{{ option.name | escape }}]"
                     id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                    class="w-full"
+                    class="w-full border py-1 px-3"
                   >
                     {% for value in option.values %}
                       <option value="{{ value }}">{{ value }}</option>
