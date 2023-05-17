@@ -6,7 +6,7 @@
         {{ media | external_video_tag: class: 'w-full h-80 object-cover' }}
 
     {% when 'video' %}
-        {{ media | video_tag: controls: true, class: 'w-full h-full object-cover', poster: 'cdn.shopify.com/s/files/1/0319/9356/1133/files/preview_images/f899e0d316564e74ade92aa6cb551ba1.thumbnail.0000000000_small.jpg?v=1684318041' }}
+        {{ media | video_tag: controls: true, class: 'w-full h-full object-cover', poster: '//cdn.shopify.com/s/files/1/0319/9356/1133/files/preview_images/f899e0d316564e74ade92aa6cb551ba1.thumbnail.0000000000_small.jpg?v=1684318041' }}
 
     {% when 'model' %}
         {{ media | model_viewer_tag }}
