@@ -96,7 +96,9 @@
                     id="Option-{{ section.id }}-{{ forloop.index0 }}"
                     class="w-full"
                   >
-                  
+                  {% for value in option.values %}
+                    option
+                  {% endfor %}
                   </select>
                 </div>
               {% endfor %}
