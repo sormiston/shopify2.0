@@ -1,6 +1,6 @@
 {% case media.media_type %}
     {% when 'image' %}
-        <img src="{{ media | image_url: width: 1200 }}" alt="{{ media.preview_image. }}">
+        <img src="{{ media | image_url: width: 1200 }}" alt="{{ media.preview_image.alt }}">
     {% else %}
         
 {% endcase %}
