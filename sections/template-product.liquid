@@ -90,6 +90,7 @@
             <div data-url="{{ product.url }}" data-section="{{ product.id }}">
               {% for option in product.options_with_values %}
                 <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+                
               {% endfor %}
             </div>
           {% endunless %}
