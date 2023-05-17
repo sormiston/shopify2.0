@@ -8,6 +8,9 @@
 
   {% when 'external_video' %}
     {{ media | external_video_tag }}
+
+    {% when 'video' %}
+    
   {% else %}
 
 {% endcase %}
