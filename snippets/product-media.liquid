@@ -9,8 +9,9 @@
   {% when 'external_video' %}
     {{ media | external_video_tag }}
 
-    {% when 'video' %}
-    
+  {% when 'video' %}
+    {{ media | video_tag }}
+
   {% else %}
 
 {% endcase %}
