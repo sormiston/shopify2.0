@@ -78,7 +78,6 @@
         </div>
 
         <div class="my-3">
-        
           <span class="text-base text-gray-500 line-through">{{ selected_variant.compare_at_price | money }}</span>
           <span class="text-lg text-gray-900">{{ selected_variant.price | money }}</span>
 
@@ -144,9 +143,9 @@
           >
             {% unless selected_variant.available %}
               Sold out
-              else
+            {% else %}
+              Add to Cart
             {% endunless %}
-            Add to Cart
           </button>
         </div>
       {% endform %}
