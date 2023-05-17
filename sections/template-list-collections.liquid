@@ -1,23 +1,44 @@
 HELLO WORLD
-{% for collection in collections %}
-  {% if collection.all_products_count > 0 %}
-    <div class="w-full py-6 px-3">
-      <div class="border bg-white overflow-hidden">
-        <a href="{{collection.url}}">
-          <div class="h-80 overflow-hidden">
-            {% if collection.featured_image %}
-              {% assign collectionImage = collection.featured_image %}
-            {% else %}
-              {% assign collectionImage = collection.products.first.featured_image %}
-            {% endif %}
-            <img
-              src="{{ collectionImage | image_url: width: 700 }}"
-              alt="{{ collection.title | escape }}"
-              class="w-full h-full object-cover"
-            >
+<div class="flex flex-col items-center my-8">
+  <h1 class="text-3xl font-medium">{{ section.settings.title }}</h1>
+  <div class="max-w-6xl mx-auto my-3">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      {% for collection in collections %}
+        {% if collection.all_products_count > 0 %}
+          <div class="w-full py-6 px-3">
+            <div class="border bg-white overflow-hidden">
+              <a href="{{ collection.url }}">
+                <div class="h-80 overflow-hidden">
+                  {% if collection.featured_image %}
+                    {% assign collectionImage = collection.featured_image %}
+                  {% else %}
+                    {% assign collectionImage = collection.products.first.featured_image %}
+                  {% endif %}
+                  <img
+                    src="{{ collectionImage | image_url: width: 700 }}"
+                    alt="{{ collection.title | escape }}"
+                    class="w-full h-full object-cover"
+                  >
+                </div>
+              </a>
+            </div>
           </div>
-        </a>
-      </div>
+        {% endif %}
+      {% endfor %}
     </div>
-  {% endif %}
-{% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "List Collections",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "List Collections Title",
+      "default": "All Collections"
+    }
+  ]
+}
+{% endschema %}
