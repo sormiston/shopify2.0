@@ -89,7 +89,7 @@
           {% unless product.has_only_default_variant %}
             <div data-url="{{ product.url }}" data-section="{{ product.id }}">
               {% for option in product.options_with_values %}
-                <label for="Option-{{ section.id }}">{{ option.name }}</label>
+                <label for="Option-{{ section.id }}-{{ forloop.index }}">{{ option.name }}</label>
               {% endfor %}
             </div>
           {% endunless %}
