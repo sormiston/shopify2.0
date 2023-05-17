@@ -38,6 +38,8 @@
 
 <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" onload="swiperLoaded()"></script>
 
+{% assign selectedVarian = product.selected_or_first_available_variant %}
+
 <div class="max-w-6xl mx-auto my-8">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <div class="product--medias">
@@ -136,7 +138,9 @@
             type="submit"
             name="add"
             class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 rounded-sm my-2"
-          >{{ product.selected_variant }}</button>
+          >
+            {{ product.selected_variant }}
+          </button>
         </div>
       {% endform %}
     </div>
