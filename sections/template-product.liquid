@@ -142,6 +142,9 @@
               disabled="disabled"
             {% endunless %}
           >
+            {% unless selected_variant.available %}
+              
+            {% endunless %}
             Add to Cart
           </button>
         </div>
