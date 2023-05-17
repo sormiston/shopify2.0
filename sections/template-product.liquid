@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-<script>
+{% comment %} <script>
   function swiperLoaded() {
     console.log('swiper loaded');
     const swiper = new Swiper('.swiper', {
@@ -13,7 +13,7 @@
       },
     });
   }
-</script>
+</script> {% endcomment %}
 <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" onload="swiperLoaded()"></script>
 
 <div class="max-w-6xl mx-auto my-8">
