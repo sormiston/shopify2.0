@@ -52,17 +52,15 @@
 </div>
 
 <script>
-  function swiperLoaded() {
-    console.log('swiper loaded');
-    const swiper = new Swiper('.swiper', {
-      direction: 'horizontal',
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  }
+  console.log('swiper loaded?');
+  const swiper = new Swiper('.swiper', {
+    direction: 'horizontal',
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 </script>
