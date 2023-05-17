@@ -3,8 +3,9 @@
     <div class="product--media">
       <div class="hidden md:block">
         {% for media in product.media %}
-            <div class="h-100 overflow-hidden"></div>
-       
+          <div class="h-100 overflow-hidden">
+            {% render 'product-media' %}
+          </div>
         {% endfor %}
       </div>
     </div>
