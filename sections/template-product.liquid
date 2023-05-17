@@ -17,7 +17,7 @@
   </script>
 
 <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" onload="swiperLoaded()"></script> 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+{% comment %} <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> {% endcomment %}
 
 <div class="max-w-6xl mx-auto my-8">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -51,7 +51,7 @@
   </div>
 </div>
 
-<script>
+{% comment %} <script>
   console.log('swiper loaded?');
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
@@ -63,4 +63,4 @@
       prevEl: '.swiper-button-prev',
     },
   });
-</script>
+</script> {% endcomment %}
