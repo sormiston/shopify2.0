@@ -85,7 +85,11 @@
           {% endif %}
         </div>
 
-        <div class="my-3"></div>
+        <div class="my-3">
+        {% unless product.has_only_default_variant %}
+          
+        {% endunless %}
+        </div>
       {% endform %}
     </div>
   </div>
