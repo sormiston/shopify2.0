@@ -5,7 +5,7 @@
         {% for media in product.media %}
           <div class="h-100 overflow-hidden">
             {% render 'product-media', media: media %}
-            {{ media | json }}
+            <pre>{{ media | json }}</pre>
           </div>
         {% endfor %}
       </div>
