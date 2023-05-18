@@ -36,13 +36,6 @@
       option2: {{ selected_variant.option2 }},
       option3: {{ selected_variant.option3 }},
 
-      getSelectedOptions: () => {
-        const currentValues = Object.values(this.$refs).map((select) => select.value)
-        console.log(currentValues)
-      },
-      selectOption(optionIdx, value) {
-        this.getSelectedOptions()
-      }
     })
   })
 </script>
