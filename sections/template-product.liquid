@@ -35,6 +35,7 @@
       currentOptions: JSON.parse('{{ product.options_with_values | json }}'),
 
       selectOption(optionIdx, value) {
+        console.log(this.currentOptions)
         this.currentOptions[optionIdx].selected_value = value
         console.log(this.currentOptions)
       }
@@ -113,7 +114,7 @@
                           name="options[{{ option.name | escape }}]"
                           id="Option-{{ section.id }}-{{ forloop.index0 }}"
                           class="w-full border py-3 px-3"
-                          @change="$store.product.selectOption('{{ forloop.index }}', $event.target.value)"
+                          @change="$store.product.selectOption('{{ forloop.index0 }}', $event.target.value)"
                         >
                           {% for value in option.values %}
                             <option
