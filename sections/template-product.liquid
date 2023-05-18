@@ -254,9 +254,6 @@
       selectedVariantId: {{ product.selected_or_first_available_variant.id }},
       allVariants: JSON.parse({{ product.variants | json }}),
 
-      init() {
-        this.$watch('selectedVariant', (x) => console.log(x))
-      },
       selectOption(option) {
         console.log(option)
       }
