@@ -26,6 +26,20 @@
   }
 </style>
 
+<script>
+  document.addEventListener('alpine:init', () => {
+    console.log('init alpine')
+    Alpine.store('product', () => ({
+      selectedVariantId: {{ product.selected_or_first_available_variant.id }},
+      allVariants: JSON.parse({{ product.variants | json }}),
+
+      selectOption(option) {
+        console.log(option)
+      }
+    }))
+  })
+</script>
+
 <div class="max-w-6xl mx-auto my-8">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <div class="product--medias">
@@ -245,20 +259,6 @@
       nextEl: '.swiper-button-next',
     },
   });
-</script>
-
-<script>
-  document.addEventListener('alpine:init', () => {
-    console.log('init alpine')
-    Alpine.store('product', () => ({
-      selectedVariantId: {{ product.selected_or_first_available_variant.id }},
-      allVariants: JSON.parse({{ product.variants | json }}),
-
-      selectOption(option) {
-        console.log(option)
-      }
-    }))
-  })
 </script>
 
 {% schema %}
