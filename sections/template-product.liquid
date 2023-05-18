@@ -6,8 +6,6 @@
 
 <script>
   document.addEventListener('alpine:init', () => {
-    console.log('alpine init')
-    console.log({{ product.variants.first.price }})
       Alpine.data('variants', () => ({
         selectedVariant: {{ product.selected_or_first_available_variant }},
         variants: JSON.parse({{ product.variants | json }})
