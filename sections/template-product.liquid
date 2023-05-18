@@ -95,7 +95,7 @@
                                                     name="options[{{ option.name | escape }}]" 
                                                     id="Option-{{ section.id }}-{{ forloop.index0 }}" 
                                                     class="w-full border py-3 px-3"
-                                                    x-model="variant.options."
+                                                    x-model="variant.options.option{{ forloop.index }}"
                                                 >
                                                     {% for value in option.values %}
                                                         <option 
