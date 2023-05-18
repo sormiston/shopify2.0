@@ -10,8 +10,9 @@
         selectedVariant: {{ product.selected_or_first_available_variant }},
         allVariants: JSON.parse({{ product.variants | json }}),
 
-        updateUrl() {
-        }
+        init() {
+        this.$watch
+      }
       }))
   })
 </script>
