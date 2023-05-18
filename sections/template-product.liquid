@@ -7,7 +7,7 @@
 <script>
   document.addEventListener('alpine:init', () => {
     console.log('alpine init')
-    console.log({{  }})
+    console.log({{ product.variants.first.price }})
       Alpine.data('variants', () => ({
           variants: JSON.parse({{ product.variants | json }})
       }))
@@ -97,7 +97,6 @@
               <div class="my-3">
                 {% unless product.has_only_default_variant %}
                   <div
-        
                     data-url="{{ product.url}}"
                     data-section="{{ section.id }}"
                   >
