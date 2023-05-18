@@ -33,9 +33,9 @@
       selectedVariantId: {{ product.selected_or_first_available_variant.id }},
       allVariants: JSON.parse('{{ product.variants | json }}'),
 
-      selectOption(option, value) {
+      selectOption: (option, value) => {
         console.log(option, value)
-        const foundVariant = this.all
+        const foundVariant = this.allVariants
       }
     })
   })
