@@ -42,9 +42,10 @@
         },
 
         get currentVariant() {
-          const found = this.allVariants.find((variant) => 
+          const found = this.allVariants.find(
+            (variant) => 
             this.currentOptions.every((currentOption) => 
-              return variant.options.includes(currentOption))
+              variant.options.includes(currentOption))
             
           )
           debugger;
