@@ -21,7 +21,9 @@
           option3: {{ selected_variant.option3 }},
         },
 
-        get
+        get currentOptions() {
+          return Object.values()
+        }
     }))
 })
 </script>
