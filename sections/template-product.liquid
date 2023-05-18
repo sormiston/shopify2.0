@@ -32,9 +32,9 @@
     Alpine.store('product', {
       selectedVariantId: {{ selected_variant.id }},
       allVariants: JSON.parse('{{ product.variants | json }}'),
-      option1: {{ selected_variant.option1 }},
-      option2: {{ selected_variant.option2 }},
-      option3: {{ selected_variant.option3 }},
+      option1: '{{ selected_variant.option1 }}',
+      option2: '{{ selected_variant.option2 }}'',
+      option3: '{{ selected_variant.option3 }},
 
     })
   })
