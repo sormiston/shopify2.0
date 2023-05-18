@@ -35,8 +35,8 @@
       allVariants: JSON.parse('{{ product.variants | json }}'),
 
       getSelectedOptions() {
-        const selections = Object.entries(this.$refs).reduce((acc, curr) => {
-          if ()
+        const selections = Object.entries(this.$refs).reduce((acc, [k, v]) => {
+          if (curr)
         }, [])
       },
       selectOption(optionIdx, value) {
