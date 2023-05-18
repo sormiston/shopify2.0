@@ -36,7 +36,7 @@
 
       getSelectedOptions() {
         const selections = Object.entries(this.$refs).reduce((acc, [k, v]) => {
-          if (k === )
+          if (k === `Option-{{ section.id }}-{{ forloop.index0 }}`)
         }, [])
       },
       selectOption(optionIdx, value) {
