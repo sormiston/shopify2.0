@@ -36,7 +36,7 @@
       selectOption(optionIdx, value) {
         console.log(optionIdx, value)
         const foundVariant = this.allVariants.find((variant, idx) => {
-          return variant.options[]
+          return variant.options[idx] 
           })
         console.log(foundVariant)
       }
