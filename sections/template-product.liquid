@@ -33,7 +33,7 @@
       selectedVariantId: {{ product.selected_or_first_available_variant.id }},
       allVariants: JSON.parse('{{ product.variants | json }}'),
 
-      selectOption(optionIdx, value) {
+      handleOptionSelection(optionIdx, value) {
         console.log(optionIdx, value)
         const foundVariant = this.allVariants.find((variant, idx) => {
           return variant.options[idx] 
