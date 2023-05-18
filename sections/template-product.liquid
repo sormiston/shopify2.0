@@ -30,9 +30,10 @@
   document.addEventListener('alpine:init', () => {
     console.log('init alpine')
     const allVariants = JSON.parse({{ product.variants | json }})
+    debugger;
     Alpine.store('product', {
       selectedVariantId: {{ product.selected_or_first_available_variant.id }},
-      allVariants,,
+      allVariants,
 
       selectOption(option) {
         console.log(option)
