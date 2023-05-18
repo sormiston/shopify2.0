@@ -35,7 +35,8 @@
       currentOptions: JSON.parse('{{ product.options | json }}'),
 
       selectOption(optionIdx, value) {
-        this.currentOptions[optionsIdx]
+        this.currentOptions[optionsIdx].selected_value = value
+        console.log(this.currentOptions)
       }
     })
   })
