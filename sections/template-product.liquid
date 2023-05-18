@@ -27,35 +27,28 @@
 </style>
 
 <script>
-  
   document.addEventListener('alpine:init', () => {
     Alpine.data('variants', () => ({
-        allVariants: JSON.parse(`{{ product.variants | json }}`),
-        options: {
-          option1: '{{ selected_variant.option1 }}',
-          option2: '{{ selected_variant.option2 }}',
-          option3: '{{ selected_variant.option3 }}',
-        },
+      allVariants: JSON.parse(`{{ product.variants | json }}`),
+      options: {
+        option1: '{{ selected_variant.option1 }}',
+        option2: '{{ selected_variant.option2 }}',
+        option3: '{{ selected_variant.option3 }}',
+      },
 
-        get currentOptions() {
-          return Object.values(this.options).filter((value) => !!value)
-        },
+      get currentOptions() {
+        return Object.values(this.options).filter((value) => !!value);
+      },
 
-        get currentVariant() {
-          const found = this.allVariants.find(
-            (variant) => 
-              this.currentOptions.every(
-                (currentOption) => 
-                  variant.options.includes(currentOption))
-            
-          )
-          debugger;
-          return found
-        }
-
-    }))
-})
-
+      get currentVariant() {
+        const found = this.allVariants.find((variant) =>
+          this.currentOptions.every((currentOption) => variant.options.includes(currentOption))
+        );
+        debugger;
+        return found;
+      },
+    }));
+  });
 </script>
 <div class="max-w-6xl mx-auto my-8">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
