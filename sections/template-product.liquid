@@ -32,7 +32,8 @@
     Alpine.store('product', {
       selectedVariantId: {{ selected_variant.id }},
       allVariants: JSON.parse('{{ product.variants | json }}'),
-      currentOptions: JSON.parse('{{ }}')
+      currentOptions: JSON.parse('{{ product.options | json }}'),
+      
       selectOption(optionIdx, value) {
         console.log(optionIdx, value)
         const foundVariant = this.allVariants.find((variant, idx) => {
