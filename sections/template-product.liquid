@@ -36,6 +36,7 @@
       option2: '{{ selected_variant.option2 }}',
       option3: '{{ selected_variant.option3 }}',
 
+      
     })
   })
 </script>
@@ -73,7 +74,7 @@
 
     <div x-data class="product--information sticky top-5 p-2">
       {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
-        <input type="hidden" name="id" value="{{ selected_variant.id }}">
+        <input type="hidden" name="id" :value="$store.product.selectedVariantId">
 
         {% for block in section.blocks %}
           {% case block.type %}
@@ -107,7 +108,6 @@
                       <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
 
                       <div class="my-2">
-                        <small x-text="'{{ option.name }}: ' + $store.product.option{{ forloop.index }}"></small>
                         <select
                           name="options[{{ option.name | escape }}]"
                           id="Option-{{ section.id }}-{{ forloop.index0 }}"
@@ -179,6 +179,7 @@
     </div>
   </div>
 </div>
+<button @click="console.log($store.product)">log state</button>
 
 <script>
   class VariantSelector extends HTMLElement {
