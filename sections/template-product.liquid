@@ -16,9 +16,9 @@
     Alpine.data('variants', () => ({
         allVariants: JSON.parse(`{{ product.variants | json }}`),
         options: {
-          option1: {{ selected_variant.option1 }},
-          option2: {{ selected_variant.option2 }},
-          option3: {{ selected_variant.option3 }},
+          option1: '{{ selected_variant.option1 }}',
+          option2: '{{ selected_variant.option2 }}',
+          option3: '{{ selected_variant.option3 }},
         },
 
         get currentOptions() {
