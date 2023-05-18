@@ -31,8 +31,8 @@
     console.log('init alpine');
     Alpine.store('product', {
       selectedVariantId: {{ product.selected_or_first_available_variant.id }},
-      allVariants: JSON.parse('{{ product.variants | json }}')
-
+      allVariants: JSON.parse('{{ product.variants | json }}'),
+      
       selectOption(option) {
         console.log(option)
       }
