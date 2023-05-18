@@ -6,7 +6,7 @@
 
 <script>
   document.addEventListener('alpine:init', () => {
-      Alpine.data('dropdown', () => ({
+      Alpine.data('variants', () => ({
           variants: JSON.parse({{ product.variants | json }})
       }))
   })
