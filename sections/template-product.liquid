@@ -33,6 +33,8 @@
       selectedVariantId: {{ selected_variant.id }},
       allVariants: JSON.parse('{{ product.variants | json }}'),
       option1: {{ selected_variant.option1 }},
+      option2: {{ selected_variant.option1 }},
+      option1: {{ selected_variant.option1 }},
 
       getSelectedOptions: () => {
         const currentValues = Object.values(this.$refs).map((select) => select.value)
