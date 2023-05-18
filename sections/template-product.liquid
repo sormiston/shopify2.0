@@ -79,7 +79,18 @@
     </div>
 
     <div x-data="{
-    
+      selectedVariantId: {{ selected_variant.id }},
+      allVariants: JSON.parse('{{ product.variants | json }}'),
+      options: {
+        option1: '{{ selected_variant.option1 }}',
+        option2: '{{ selected_variant.option2 }}',
+        option3: '{{ selected_variant.option3 }}',
+      }
+     
+
+      get currentOptions() {
+        
+      }
     }" class="product--information sticky top-5 p-2">
       {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
         <input type="hidden" name="id" :value="$store.product.selectedVariantId">
