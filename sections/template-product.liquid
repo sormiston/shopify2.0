@@ -35,9 +35,7 @@
 
       selectOption: (option, value) => {
         console.log(option, value)
-        const foundVariant = this.allVariants.find(variant => {
-          return variant[option] === value
-        })
+        const foundVariant = this.allVariants.find(variant => variant[option] === value)
       }
     })
   })
