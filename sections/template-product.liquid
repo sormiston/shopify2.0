@@ -10,7 +10,7 @@
     console.log({{ product.variants.first.price }})
       Alpine.data('variants', () => ({
         selectedVariant: {{ product.selected_or_first_available_variant }},
-          variants: JSON.parse({{ product.variants | json }})
+        variants: JSON.parse({{ product.variants | json }})
       }))
   })
 </script>
@@ -179,6 +179,7 @@
 <script>
   
   
+  
   updateURL() {
     if (!this.currentVariant) return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
@@ -202,6 +203,7 @@
         if (oldPrice && newPrice) oldPrice.innerHTML = newPrice.innerHTML;
       });
   }
+
 
 
 </script>
