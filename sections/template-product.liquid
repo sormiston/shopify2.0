@@ -32,7 +32,7 @@
     Alpine.store('product', {
       selectedVariantId: {{ selected_variant.id }},
       allVariants: JSON.parse('{{ product.variants | json }}'),
-      option1: {{ sel}}
+      option1: {{ selected_variant.option1 }},
 
       getSelectedOptions: () => {
         const currentValues = Object.values(this.$refs).map((select) => select.value)
