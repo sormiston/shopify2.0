@@ -93,7 +93,7 @@
       class="product--information sticky top-5 p-2"
     >
       {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
-        <input type="hidden" name="id" :value="">
+        <input type="hidden" name="id" value="{{ selected_variant.id }}">
 
         {% for block in section.blocks %}
           {% case block.type %}
