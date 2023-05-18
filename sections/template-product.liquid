@@ -74,7 +74,8 @@
     </div>
 
     <div
-      x-data="{
+      x-data="
+        {
           selectedVariantId: {{ selected_variant.id }},
           allVariants: JSON.parse('{{ product.variants | json }}'),
           options: {
@@ -86,7 +87,8 @@
           get currentOptions() {
             return Object.values(this.options).filter((value) => value)
           }
-        }"
+        }
+      "
       class="product--information sticky top-5 p-2"
     >
       {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
@@ -128,7 +130,6 @@
                           name="options[{{ option.name | escape }}]"
                           id="Option-{{ section.id }}-{{ forloop.index0 }}"
                           class="w-full border py-3 px-3"
-                          
                         >
                           {% for value in option.values %}
                             <option
