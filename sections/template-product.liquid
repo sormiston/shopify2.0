@@ -30,7 +30,6 @@
   document.addEventListener('alpine:init', () => {
     console.log('init alpine');
     Alpine.store('product', {
-      sectionId: {{ section.id }},
       selectedVariantId: {{ selected_variant.id }},
       allVariants: JSON.parse('{{ product.variants | json }}'),
 
