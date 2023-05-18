@@ -9,6 +9,7 @@
     console.log('alpine init')
     console.log({{ product.variants.first.price }})
       Alpine.data('variants', () => ({
+        selectedVariant: 
           variants: JSON.parse({{ product.variants | json }})
       }))
   })
