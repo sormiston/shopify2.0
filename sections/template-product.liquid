@@ -22,7 +22,7 @@
         },
 
         get currentOptions() {
-          return Object.values(this.options)
+          return Object.values(this.options).filter((value) => !!value)
         }
     }))
 })
