@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div x-data="{}" class="product--information sticky top-5 p-2">
+        <div class="product--information sticky top-5 p-2">
             {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
                 <input type="hidden" name="id" value="{{ selected_variant.id }}">
 
@@ -91,7 +91,7 @@
                                                 </select>
                                             </div>
 
-                                            <script id="variants-data" type="application/json">
+                                            <script type="application/json">
                                                 {{ product.variants | json }}
                                             </script>
 
