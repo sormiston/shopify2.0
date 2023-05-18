@@ -32,7 +32,7 @@
     Alpine.store('product', {
       selectedVariantId: {{ selected_variant.id }},
       allVariants: JSON.parse('{{ product.variants | json }}'),
-      currentOptions: JSON.parse('{{ product.options | json }}'),
+      currentOptions: JSON.parse('{{ product.options_with_values | json }}'),
 
       selectOption(optionIdx, value) {
         this.currentOptions[optionIdx].selected_value = value
