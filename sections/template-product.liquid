@@ -11,7 +11,7 @@
         allVariants: JSON.parse({{ product.variants | json }}),
 
         init() {
-        this.$watch('selectedVariant', ())
+        this.$watch('selectedVariant', (x) => console.log(x))
       }
       }))
   })
@@ -182,6 +182,9 @@
   
   
   
+  
+  
+  
   updateURL() {
     if (!this.currentVariant) return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
@@ -205,6 +208,9 @@
         if (oldPrice && newPrice) oldPrice.innerHTML = newPrice.innerHTML;
       });
   }
+
+
+
 
 
 
