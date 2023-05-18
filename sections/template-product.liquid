@@ -4,6 +4,18 @@
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
+<script>
+  document.addEventListener('alpine:init', () => {
+      Alpine.data('dropdown', () => ({
+          open: false,
+
+          toggle() {
+              this.open = ! this.open
+          }
+      }))
+  })
+</script>
+
 <style>
   .swiper-button-prev,
   .swiper-button-next {
@@ -112,9 +124,6 @@
                           {% endfor %}
                         </select>
                       </div>
-                      <script>
-                      Alpine.data
-                      </script>
                       <script type="application/json">
                         {{ product.variants | json }}
                       </script>
