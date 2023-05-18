@@ -14,7 +14,7 @@
 <script>
   document.addEventListener('alpine:init', () => {
     Alpine.data('variants', () => ({
-        allVariants: JSON.parse("{{ product.variants | json }}")
+        allVariants: JSON.parse(`{{ product.variants | json }}`)
     }))
 })
 </script>
