@@ -81,7 +81,7 @@
       </div>
     </div>
 
-    <div class="product--information sticky top-5 p-2">
+    <div x-data="variants" class="product--information sticky top-5 p-2">
       {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
         <input type="hidden" name="id" x-bind:value="currentVariant.id">
 
@@ -109,7 +109,7 @@
             {% when 'variant_selector' %}
               <div class="my-3">
                 {% unless product.has_only_default_variant %}
-                  <div x-data="variants" data-url="{{ product.url}}" data-section="{{ section.id }}">
+                  <div data-url="{{ product.url}}" data-section="{{ section.id }}">
                     {% for option in product.options_with_values %}
                       <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
 
