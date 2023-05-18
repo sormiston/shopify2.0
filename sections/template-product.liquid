@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 <style>
     .swiper-button-prev, .swiper-button-next { color: black; top: auto !important; height: 20px; }
     .swiper-button-prev::after, .swiper-button-next::after { font-size: 20px; }
     .swiper-pagination { color: black; bottom: 0 !important; }
     .swiper-pagination-bullet-active { background: black !important; }
-    .product--information { height: fit-content; }
 </style>
   <script>
     function swiperLoaded() {
@@ -55,22 +55,4 @@
     </div>
 </div>
 
-        <div class="product--information"></div>
-    </div>
-</div>
 
-
-<script>
-    const swiper = new Swiper('.swiper', {
-        direction: 'horizontal',
-
-        pagination: {
-            el: '.swiper-pagination'
-        },
-
-        navigation: {
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next'
-        }
-    })
-</script>
