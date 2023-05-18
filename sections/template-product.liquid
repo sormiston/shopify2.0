@@ -34,6 +34,9 @@
       allVariants: JSON.parse('{{ product.variants | json }}'),
       currentOptions: JSON.parse('{{ selected_variant.options_with_values | json }}'),
 
+      getSelectedOptions() {
+        
+      },
       selectOption(optionIdx, value) {
         console.log(this.currentOptions)
         this.currentOptions[optionIdx].selected_value = value
