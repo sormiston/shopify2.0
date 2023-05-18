@@ -3,25 +3,23 @@
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
-{% comment %}
-  <script>
-    document.addEventListener('alpine:init', () => {
-        Alpine.store('variants', () => ({
-          selectedVariant: {{ product.selected_or_first_available_variant }},
-          allVariants: JSON.parse({{ product.variants | json }}),
+<script>
+  document.addEventListener('alpine:init', () => {
+      Alpine.store('variants', () => ({
+        selectedVariant: {{ product.selected_or_first_available_variant }},
+        allVariants: JSON.parse({{ product.variants | json }}),
 
-          init() {
-            this.$watch('selectedVariant', (x) => console.log(x))
-          },
-          selectVariant(targetVariant) {
-            this.selectedVariant = targetVariant
-          },
+        init() {
+          this.$watch('selectedVariant', (x) => console.log(x))
+        },
+        selectVariant(targetVariant) {
+          this.selectedVariant = targetVariant
+        },
 
 
-        }))
-    })
-  </script>
-{% endcomment %}
+      }))
+  })
+</script>
 
 <style>
   .swiper-button-prev,
