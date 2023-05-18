@@ -4,7 +4,7 @@
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
-<script>
+{% comment %} <script>
   document.addEventListener('alpine:init', () => {
       Alpine.store('variants', () => ({
         selectedVariant: {{ product.selected_or_first_available_variant }},
@@ -20,7 +20,7 @@
 
       }))
   })
-</script>
+</script> {% endcomment %}
 
 <style>
   .swiper-button-prev,
