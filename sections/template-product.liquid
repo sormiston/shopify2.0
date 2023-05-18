@@ -95,7 +95,7 @@
               <div class="my-3">
                 {% unless product.has_only_default_variant %}
                   <div
-                    x-data="{ variants: {{ product.variants | json }}}"
+        
                     data-url="{{ product.url}}"
                     data-section="{{ section.id }}"
                   >
