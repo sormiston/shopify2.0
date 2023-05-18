@@ -33,7 +33,7 @@
     debugger;
     Alpine.store('product', {
       selectedVariantId: {{ product.selected_or_first_available_variant.id }},
-      allVariants,
+      allVariants: JSON.parse('')
 
       selectOption(option) {
         console.log(option)
