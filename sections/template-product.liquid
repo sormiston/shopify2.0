@@ -13,7 +13,7 @@
         init() {
         this.$watch('selectedVariant', (x) => console.log(x))
       },
-        
+
       }))
   })
 </script>
@@ -187,6 +187,8 @@
   
   
   
+  
+  
   updateURL() {
     if (!this.currentVariant) return;
     window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
@@ -210,6 +212,8 @@
         if (oldPrice && newPrice) oldPrice.innerHTML = newPrice.innerHTML;
       });
   }
+
+
 
 
 
