@@ -3,24 +3,6 @@
 
 {% assign selected_variant = product.selected_or_first_available_variant %}
 
-<script>
-  document.addEventListener('alpine:init', () => {
-      Alpine.store('variants', () => ({
-        selectedVariant: {{ product.selected_or_first_available_variant }},
-        allVariants: JSON.parse({{ product.variants | json }}),
-
-        init() {
-          this.$watch('selectedVariant', (x) => console.log(x))
-        },
-        selectVariant(targetVariant) {
-          this.selectedVariant = targetVariant
-        },
-
-
-      }))
-  })
-</script>
-
 <style>
   .swiper-button-prev,
   .swiper-button-next {
@@ -115,7 +97,7 @@
                           name="options[{{ option.name | escape }}]"
                           id="Option-{{ section.id }}-{{ forloop.index0 }}"
                           class="w-full border py-3 px-3"
-                          @change="$store.variants.selectVariant($event.target.value)"
+                          @change="$store.product.selectOption({{ option.name }}, $event.target.value)"
                         >
                           {% for value in option.values %}
                             <option
@@ -129,9 +111,6 @@
                           {% endfor %}
                         </select>
                       </div>
-                      <script type="application/json">
-                        {{ product.variants | json }}
-                      </script>
                     {% endfor %}
                   </div>
                 {% endunless %}
@@ -266,6 +245,22 @@
       nextEl: '.swiper-button-next',
     },
   });
+</script>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.store('product', () => ({
+      selectedVariantId: {{ product.selected_or_first_available_variant.id }},
+      allVariants: JSON.parse({{ product.variants | json }}),
+
+      init() {
+        this.$watch('selectedVariant', (x) => console.log(x))
+      },
+      selectOption(option) {
+        console.log(option)
+      }
+    }))
+  })
 </script>
 
 {% schema %}
