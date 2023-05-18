@@ -29,11 +29,11 @@
 <script>
   document.addEventListener('alpine:init', () => {
     console.log('init alpine')
-    const allVariants = JSON.parse({{ product.variants | json }})
+    const allVariants = JSON.parse()
     debugger;
     Alpine.store('product', {
       selectedVariantId: {{ product.selected_or_first_available_variant.id }},
-      allVariants: JSON.parse('')
+      allVariants: JSON.parse('{{ product.variants | json }}')
 
       selectOption(option) {
         console.log(option)
