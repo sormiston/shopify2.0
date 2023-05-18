@@ -247,7 +247,7 @@
   });
 </script>
 
-<script>
+{% comment %} <script>
   document.addEventListener('alpine:init', () => {
     console.log('init alpine')
     Alpine.store('product', () => ({
@@ -259,7 +259,7 @@
       }
     }))
   })
-</script>
+</script> {% endcomment %}
 
 {% schema %}
 {
