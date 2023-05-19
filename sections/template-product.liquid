@@ -53,8 +53,9 @@
       },
 
       priceFormatter(number) {
-        return `
-      }
+        return `$${(number / 100).toFixed(2)}`
+      },
+      
       init() {
         this.$watch('currentVariant', () => {
           window.history.replaceState({}, '', `{{ product.url }}?variant=${this.currentVariant.id}`);
