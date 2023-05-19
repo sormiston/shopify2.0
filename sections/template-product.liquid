@@ -38,12 +38,6 @@
       },
       hasLoaded: false,
 
-      init() {
-        this.$watch('currentVariant', () => {
-          window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
-        });
-        this.hasLoaded = true;
-      },
       get currentOptions() {
         return Object.values(this.options).filter((value) => !!value);
       },
@@ -54,6 +48,13 @@
         );
 
         return found;
+      },
+
+      init() {
+        this.$watch('currentVariant', () => {
+          window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
+        });
+        this.hasLoaded = true;
       },
     }));
   });
