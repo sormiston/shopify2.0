@@ -30,7 +30,7 @@
   document.addEventListener('alpine:init', () => {
     Alpine.data('variants', () => ({
       allVariants: JSON.parse(`{{ product.variants | json }}`),
-      productUrl: ``,
+      productUrl: `{{ product.url }}`,
       options: {
         option1: '{{ selected_variant.option1 }}',
         option2: '{{ selected_variant.option2 }}',
