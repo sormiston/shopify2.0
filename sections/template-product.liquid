@@ -143,7 +143,6 @@
                           {% for value in option.values %}
                             <option
                               value="{{ value | escape }}"
-                              x-bind:selected="options.option{{ forloop.index }} == value"
                             >
                               {{ value }}
                             </option>
