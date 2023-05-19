@@ -62,7 +62,7 @@
 
       init() {
         this.$watch('currentVariant', () => {
-          update URL without navigating
+          {% comment %} update URL to include variant param, without navigating {% endcomment %}
           window.history.replaceState({}, '', `{{ product.url }}?variant=${this.currentVariant.id}`);
         });
         this.hasLoaded = true;
