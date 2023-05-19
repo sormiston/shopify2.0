@@ -143,7 +143,7 @@
                           {% for value in option.values %}
                             <option
                               value="{{ value | escape }}"
-                              :selected
+                              :selected="options.option"
                             >
                               {{ value }}
                             </option>
