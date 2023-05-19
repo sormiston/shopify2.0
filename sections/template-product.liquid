@@ -62,6 +62,7 @@
 
       init() {
         this.$watch('currentVariant', () => {
+          update URL without navigating
           window.history.replaceState({}, '', `{{ product.url }}?variant=${this.currentVariant.id}`);
         });
         this.hasLoaded = true;
