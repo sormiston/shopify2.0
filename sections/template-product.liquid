@@ -49,8 +49,9 @@
       },
 
       get variantPriceCompareAt() {
-        return this.priceFormatter(this.currentVariant.price)
+        return this.priceFormatter(this.currentVariant.compare_at_price)
       },
+      
       get variantPrice() {
         console.log(this.currentVariant);
       },
