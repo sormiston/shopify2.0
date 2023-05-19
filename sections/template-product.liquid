@@ -36,7 +36,11 @@
         option2: '{{ selected_variant.option2 }}',
         option3: '{{ selected_variant.option3 }}',
       },
-      hasLoaded?=
+      hasLoaded: false,
+
+      init() {
+        
+      },
       get currentOptions() {
         return Object.values(this.options).filter((value) => !!value);
       },
