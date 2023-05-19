@@ -120,7 +120,7 @@
                 <span x-text="variantPrice" class="text-lg text-gray-900"></span>
 
                 {% if selected_variant.price < selected_variant.compare_at_price %}
-                  <span class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
+                  <span x-if="variantPrice < >" class="px-5 py-1 text-sm font-bold bg-red-500 rounded-full text-white mx-4">Sale</span>
                 {% endif %}
               </div>
             {% when 'variant_selector' %}
