@@ -49,15 +49,15 @@
       },
 
       get variantPriceCompareAt() {
-        return this.priceFormatter(this.currentVariant.compare_at_price)
+        return this.priceFormatter(this.currentVariant.compare_at_price);
       },
-      
+
       get variantPrice() {
-        console.log(this.currentVariant);
+        return this.priceFormatter(this.currentVariant.price);
       },
 
       priceFormatter(number) {
-        return `$${(number / 100).toFixed(2)}`
+        return `$${(number / 100).toFixed(2)}`;
       },
 
       init() {
